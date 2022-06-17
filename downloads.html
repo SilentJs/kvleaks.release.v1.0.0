@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="siteLogo"><img src="images/kvl_d_full.png"></div>
+<div class="dwnBox">
+    <button class="homeB"><img src="images/home.svg">Go Home</button>
+    <h5>Windows Client</h5>
+    <hr>
+    <a class="win64B winB"><img src="images/windows.svg">Windows x64</a>
+    <a class="win32B winB"><img src="images/windows.svg">Windows x86</a>
+    <h5 style="margin-top: 70px;">Android / iOS App</h5>
+    <hr>
+    <p>Comming Soon!</p>
+
+</div>    
+</body>
+<style>
+.homeB img {
+    width: 19px;
+    left: 29px;
+    margin-top: -2px;
+    position: absolute;
+}
+button.homeB {
+    border-radius: 0px 0px 5px 5px;
+    cursor: pointer;
+    margin-top: -51px;
+    border-top: 1px #222 solid;
+    border: none;
+    background: #222;
+    color: #fff;
+    left: 214px;
+    padding: 10px 56px;
+    position: absolute;
+}
+.winB img {
+    position: absolute;
+    width: 30px;
+    margin-top: -8px;
+    left: 8px;
+}    
+.dwnBox a {
+    text-decoration: none;
+    color: #000;
+    border-radius: 2px;
+    font-size: 16px;
+    bottom: -15px;
+    position: relative;
+    background: #fff;
+    padding: 15px 15px 15px 47px;
+    margin: 0px;
+    /* position: absolute; */
+}
+.dwnBox {
+    position: fixed;
+    color: #fff;
+    border-radius: 20px;
+    width: 500px;
+    padding: 50px;
+    background: #111;
+    font-family: sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+}
+.dwnBox hr {
+    margin-top: -30px;
+}
+body {
+    background: #222;
+}
+.dwnBox h5 {
+    font-size: 21px;
+}
+.siteLogo img {
+    width: 285px;
+    right: 50%;
+    top: 5%;
+    transform: translate(45%);
+    position: fixed;
+}
+</style>
+</html>
