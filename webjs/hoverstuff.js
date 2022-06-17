@@ -57,7 +57,7 @@ function findChannels(){
        <button onclick="joinChat('class8');setBack();" onmouseover="iconFixerOn('.hover5')" onmouseout="iconFixerOut('.hover5')" id="b5"class="rMain b5"><img src="images/flag.svg" class="hover5"><a class="text">Class 8</a></button>
        <button onclick="joinChat('class7');setBack();" onmouseover="iconFixerOn('.hover6')" onmouseout="iconFixerOut('.hover6')" id="b6" class="rMain b6"><img src="images/flag.svg" class="hover6"><a class="text">Class 7</a></button>
        <button onclick="joinChat('class6');setBack();" onmouseover="iconFixerOn('.hover7')" onmouseout="iconFixerOut('.hover7')" id="b6" class="rMain b6"><img src="images/flag.svg" class="hover7"><a class="text">Class 6</a></button>
-       <button onclick="joinChat('class5');setBack(); onmouseover="iconFixerOn('.hover8')" onmouseout="iconFixerOut('.hover8')" id="b6" class="rMain b6"><img src="images/flag.svg"class="hover8"><a class="text">Class 5</a></button>`
+       <button onclick="joinChat('class5');setBack();" onmouseover="iconFixerOn('.hover8')" onmouseout="iconFixerOut('.hover8')" id="b6" class="rMain b6"><img src="images/flag.svg"class="hover8"><a class="text">Class 5</a></button>`
        document.querySelectorAll('.bMain').forEach((data)=>data.style.margin='30px 0px 0px 0px');
        document.querySelectorAll('.rMain').forEach((data)=>data.style.margin='20px 0px 0px 0px');
        document.querySelectorAll('.rMain').forEach((data)=>data.style.padding='5px 0px 0px 20px');
