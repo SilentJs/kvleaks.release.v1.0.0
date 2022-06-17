@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <link rel="stylesheet" href="css/master.css">
+<script defer src="webjs/socket.io.js"></script>
+<title>KVLeaks Newspage</title>
+<script defer src="webjs/news.js"></script>
+<script defer src="webjs/banchecker.js"></script>
+<script defer src="webjs/profileLoader.js"></script>
+<link rel="stylesheet" href="css/news.css">
+<link rel="stylesheet" href="css/newadjuster.css">
+<script src="https://kit.fontawesome.com/4f3bffcdd5.js" crossorigin="anonymous"></script>
+<script defer src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-site-verification" content="u_nFur0ljOFpzeQ5Pe7-CWevSKdPJESlzI_-CiUwsvE" />
+<meta name="google-signin-client_id" content="775875900950-0bbipabg64dbtfbrchtrbco7qortlhtf.apps.googleusercontent.com">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1202059422470962"
+     crossorigin="anonymous"></script>
+    </head>
+<body>
+  <div class="postSec">
+    <ul id="posts" class="posts"></ul>
+</div>
+  <!-- <div class="navmain">
+    <a class="sButton" href="index.html"><gg>Home</gg></i></a>
+    <a href="chat.html"><gg>Chat</gg></i></a>
+    <a class="sButton" style="padding-right: 0px;" href="announcement.html"><gg>Annoucements</gg></i></a>
+    <a class="sButton" onclick="document.querySelectorAll('.sButton')[5].scrollIntoView()"><img class="bit2" src="images/uparrow.svg"></i></a>
+    <a class="sButton" href="news.html"><gg>AboutUs</gg></i></a>
+    <a class="sButton" href="news.html"><gg>Downloads</gg></i></a>
+    <a class="sButton" onclick="setMode()"><div class="imageMode"></div>ScreenMode</a>
+  </div> -->
+  <nav class="tnav">
+
+    <label for="touch"><span class="tspan" onclick="if(document.querySelector('.postSec').classList.contains('godown')){
+      document.querySelector('.postSec').classList.remove('godown') 
+      document.querySelector('.tnavImg0').style.display='none'
+      document.querySelector('.tnavImg').style.display='none'
+      document.querySelector('.tnavImg1').style.display='none'
+      document.querySelector('.tnavImg2').style.display='none'
+      document.querySelector('.tnavImg3').style.display='none'
+      document.querySelector('.tnavImg4').style.display='none'
+
+      }else{
+        document.querySelector('.postSec').classList.add('godown')
+        document.querySelector('.tnavImg0').style.display='block'
+        document.querySelector('.tnavImg').style.display='block'
+        document.querySelector('.tnavImg1').style.display='block'
+        document.querySelector('.tnavImg2').style.display='block'
+        document.querySelector('.tnavImg3').style.display='block'
+        document.querySelector('.tnavImg4').style.display='block'
+
+        }">Menu</span></label>               
+    <input type="checkbox" id="touch"> 
+  
+    <ul class="slide">
+      <li style="margin-top: 55px;"><img class="tnavImg0" src="images/home.svg"><a href="index.html">Home</a></li> 
+      <li><img class="tnavImg" src="images/chat.svg"><a href="chat.html">Chatpage</a></li> 
+      <li><img class="tnavImg1" src="images/news.svg"><a href="news.html">Newspage</a></li>
+      <li><img class="tnavImg2" src="images/announcement.svg"><a href="announcement.html">Annoucements</a></li>
+      <!-- <li><img class="tnavImg3" src="images/info.svg"><a href="#">AboutUs</a></li> -->
+      <!-- <li><img class="tnavImg4" src="images/download.svg"><a href="#">Downloads</a></li> -->
+      <li><a onclick="setMode()" href="#">ScreenMode</a></li>
+    </ul>
+  
+  </nav> 
+  
+<div class="searchSec">
+
+  <!-- <div class="dropdown">
+      <button class="dropbtn" onclick="showDropdown()">Search Options</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="hideTagsBar()">Search by Topic</a>
+        <a href="#" onclick="hideTopicBar()">Search by Tags</a>
+      </div> -->
+  
+  
+
+  </div>
+</body>
+<div class="msgSec">
+  <form id="msgBox">
+    <button class="pbutton cdButton" type="submit">Post</button><br> 
+    <input id="enterTopic" type="text" placeholder="Topic" name="box1" required autocomplete="off" maxlength="200"><br> 
+    <textarea id="enterContent" type="text" placeholder="Your Post's contents..." name="box2" required autocomplete="off" maxlength="2000"></textarea><br>
+    <input id="attach" type="text" placeholder="Attachments : paste the image address from imgur.com or any other site" name="box3" autocomplete="off" maxlength="5000"><br>
+    <input id="enterTags" type="text" placeholder="Tags: seperated by a hastag or space(example: funny class12 teacher)" name="box4" required autocomplete="off" maxlength="300">
+  </form><br>
+  <form id="searchBox" style="display: flex;">
+    <button class="resetB" onclick="clearSBox()" type="reset" ><i class="fa-solid fa-xmark"></i></button>
+    <input type="text" placeholder="Search (include # to search by tags)" name="box1" id="tagsbar" autocomplete="off">
+    <button onclick="searchThing(boxData.box1.value.toLocaleLowerCase());" class="submitB"type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
+    </form>
+    <script>
+      function searchThing(string){
+    localStorage.setItem('searching','true');
+    postBox.innerHTML=''
+    console.log(string)
+    contentArr=[]
+    for (let i = 0; i < 70; i++) {
+        if(dadarray[i]){
+            if(dadarray[i].Content.toLocaleLowerCase().includes(string)||dadarray[i].Topic.toLocaleLowerCase().includes(string)||dadarray[i].Name.toLocaleLowerCase().includes(string)||dadarray[i].Time.includes(string)){
+                messageOut(dadarray[i])
+            }
+        }
+    }
+    
+
+}
+    </script>
+    
+
+</div>
+<!-- Slideshow container -->
+<div class="Slideshow">
+  <div class="slideshow-container" style="display:none;"><div class="mySlides fade">
+    <div class="numbertext">1/6</div>
+    <img src="https://static.remove.bg/remove-bg-web/6ad52d54336ad62d58e7bd1317d40fb98e377ad5/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg" style="width:100%">
+  </div><div class="mySlides fade">
+    <div class="numbertext">2/6</div>
+    <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg" style="width:100%">
+  </div><div class="mySlides fade">
+    <div class="numbertext">3/6</div>
+    <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" style="width:100%">
+  </div><div class="mySlides fade">
+    <div class="numbertext">4/6</div>
+    <img src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg" style="width:100%">
+  </div><div class="mySlides fade">
+    <div class="numbertext">5/6</div>
+    <img src="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg" style="width:100%">
+  </div><div class="mySlides fade">
+    <div class="numbertext">6/6</div>
+    <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" style="width:100%">
+  </div>  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div style="text-align:center;display:none;">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+<div id="rules"></div>
+</html>

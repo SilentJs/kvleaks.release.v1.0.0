@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script defer src="webjs/electronlogin.js"></script>
+    <script defer src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="google-signin-client_id" content="613459978793-siulbcg86o106re849evbjosagsgirp3.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+
+body{
+    background: #222;
+}
+.one-tap-signinB {
+    font-family: sans-serif;
+    position: fixed;
+    top: 50%;
+    background: #333;
+    padding: 70px;
+    border-radius: 10px;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+p.msgP {
+    background: #555;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -13px;
+    color: #fff;
+    font-weight: 700;
+}
+p.declareP {
+    border-radius: 10px 10px 0px 0px;
+    color: #0fd50f;
+    font-weight: 700;
+    background: #555;
+    padding: 20px 20px 20px 88px;
+}
+p.declareP img {
+    position: absolute;
+    left: 111px;
+    width: 40px;
+    margin-top: -16px;
+}
+p.undeclareP {
+    border-radius: 10px 10px 0px 0px;
+    color: #ff473e;;
+    font-weight: 700;
+    background: #555;
+    padding: 20px 20px 20px 88px;
+}
+p.undeclareP img {
+    position: absolute;
+    left: 109px;
+    width: 36px;
+    margin-top: -10px;
+}
+.siteLogo img {
+    width: 300px;
+}
+.siteLogo {
+    position: fixed;
+    top: 20%;
+    transform: translate(50%, 0);
+    right: 50%;
+}
+    </style>
+</head>
+<body>
+    <div class="siteLogo"><img src="images/kvl_d_full.png"></div>
+    <div class="one-tap-signinB"></div>
+</body>
+</html>
