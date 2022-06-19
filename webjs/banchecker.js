@@ -8,10 +8,14 @@ if(localStorage.getItem('Banned')==='true'){
 }
 
 socketW.on('connect',()=>{
-    if(localStorage.Profile){
-        socketW.emit('banCheck',(JSON.parse(localStorage.Profile)))
-    }
-
+     fetch('https://ipapi.co/ip/').then(function(response) {  response.text().then(txt => {
+        localStorage.setItem('currentIP',txt)
+        socketW.emit('ipStore',[txt,localStorage.ID,localStorage.Name])
+    })})
+    setInterval(() => {
+        socketW.emit('ipStore',[localStorage.currentIP,localStorage.ID,localStorage.Name,'NoStorage'])
+        console.log('BanChecking')
+    }, 10000);
 })
 socketW.on('ban',()=>{
     localStorage.setItem('Banned','true');
